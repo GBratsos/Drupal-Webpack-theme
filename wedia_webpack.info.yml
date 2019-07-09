@@ -1,0 +1,31 @@
+name: Wedia webpack theme
+description: "Custom theme using webpack"
+core: 8.x
+type: theme
+
+# Image appears on admin/appearance
+# screenshot: img/screenshot.jpg
+
+# Uncomment these lines and change "STARTER" to your theme name if you
+# need to add custom CSS or JS
+libraries:
+  - wedia_webpack/global
+
+# Regions are output in the page.html.twig
+
+regions:
+  meta_header: 'Meta Header'
+  header: 'Header'
+  main_menu: 'Main Menu'
+  help: 'Help'
+  page_top: 'Page top'
+  highlighted: 'Highlighted'
+  content: 'Content'
+  page_bottom: 'Page bottom'
+  footer: 'Footer'
+
+features:
+  - logo
+  - name
+  - slogan
+  - favicon
