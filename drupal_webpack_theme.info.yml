@@ -1,4 +1,4 @@
-name: Wedia webpack theme
+name: Drupal webpack theme
 description: "Custom theme using webpack"
 core: 8.x
 type: theme
@@ -9,7 +9,7 @@ type: theme
 # Uncomment these lines and change "STARTER" to your theme name if you
 # need to add custom CSS or JS
 libraries:
-  - wedia_webpack/global
+  - drupal_webpack_theme/global
 
 # Regions are output in the page.html.twig
 

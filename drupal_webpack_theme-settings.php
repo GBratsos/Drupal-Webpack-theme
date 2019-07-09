@@ -11,6 +11,6 @@ use Drupal\Core\Form\FormStateInterface;
  * @param $form
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  */
-function wedia_webpack_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+function drupal_webpack_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
 
 }

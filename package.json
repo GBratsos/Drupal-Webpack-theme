@@ -1,5 +1,5 @@
 {
-  "name": "drupal-webpack_stack",
+  "name": "drupal_webpack_theme",
   "version": "1.0.0",
   "description": "An awesome webpack theme for Drupal",
   "main": "index.js",

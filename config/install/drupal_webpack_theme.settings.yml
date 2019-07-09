@@ -1,0 +1,7 @@
+features:
+   comment_user_picture: true
+   favicon: true
+   logo: true
+   name: true
+   node_user_picture: true
+langcode: en

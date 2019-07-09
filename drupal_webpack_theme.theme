@@ -6,13 +6,13 @@ use Drupal\wapi\Helpers\WapiStringFormatter;
 /**
  * Implements hook_preprocess_block()
  */
-function wedia_webpack_preprocess_block(&$variables) {
+function drupal_webpack_theme_preprocess_block(&$variables) {
 }
 
 /**
  * Implements template_preprocess_field().
  */
-function wedia_webpack_preprocess_field(&$variables, $hook) {
+function drupal_webpack_theme_preprocess_field(&$variables, $hook) {
 }
 
 /**
@@ -20,13 +20,13 @@ function wedia_webpack_preprocess_field(&$variables, $hook) {
  *
  * Adds additional classes
  */
-function wedia_webpack_preprocess_html(&$variables) {
+function drupal_webpack_theme_preprocess_html(&$variables) {
   $route = \Drupal::routeMatch();
   $route_params = $route->getParameters();
   $route_obj = $route->getRouteObject();
   if($route_obj->hasDefault('_title')){
     $page_title = $route_obj->getDefault('_title');
-    $page_title_class = WapiStringFormatter::getMachineName($page_title);
+    //$page_title_class = WapiStringFormatter::getMachineName($page_title);
     $variables['attributes']['class'][] = $page_title_class;
   }
   if($route_params->has('custom_classes')) {
@@ -40,7 +40,7 @@ function wedia_webpack_preprocess_html(&$variables) {
  *
  * Add template suggestions and classes
  */
-function wedia_webpack_preprocess_node(&$variables) {
+function drupal_webpack_theme_preprocess_node(&$variables) {
 }
 
 /**
@@ -48,12 +48,12 @@ function wedia_webpack_preprocess_node(&$variables) {
  *
  * Add convenience variables and template suggestions
  */
-function wedia_webpack_preprocess_page(&$variables) {
+function drupal_webpack_theme_preprocess_page(&$variables) {
 }
 
 /**
  * Implements template_preprocess_views_view().
  */
-function wedia_webpack_preprocess_views_view(&$variables) {}
+function drupal_webpack_theme_preprocess_views_view(&$variables) {}
 
-function wedia_webpack_form_alter(&$form, &$form_state, $form_id) {}
+function drupal_webpack_theme_form_alter(&$form, &$form_state, $form_id) {}
