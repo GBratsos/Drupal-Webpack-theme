@@ -49,7 +49,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader',
+          loader: 'babel-loader'
         }
       },
       {
@@ -57,12 +57,17 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: '../../../../fonts/[name].[ext]'
+            name: 'fonts/[name].[ext]'
           }
         }]
       },
     ],
   },
   plugins: [
-  ]
+  ],
+  resolve: {
+    alias: {
+      jquery: 'jquery/dist/jquery.js' 
+    }
+  }
 };
