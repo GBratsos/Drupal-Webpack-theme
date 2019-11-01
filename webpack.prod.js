@@ -1,6 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -8,8 +8,20 @@ module.exports = {
   mode: 'production',
   entry: './src/index.js',
   optimization: {
+    minimize: true,
     minimizer: [
-      new OptimizeCSSAssetsPlugin({})
+    new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: false,
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+    }),
+    new OptimizeCSSAssetsPlugin({})
     ]
   },
   output: {
@@ -37,8 +49,8 @@ module.exports = {
               ]
             },
           },
-          'sass-loader',
-        ],
+          'sass-loader'
+        ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|gif|svg)$/,
@@ -49,11 +61,18 @@ module.exports = {
           }
         }]
       },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: 'css/style.css'
     })
   ]
 };
