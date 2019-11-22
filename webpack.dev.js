@@ -64,10 +64,16 @@ module.exports = {
     ],
   },
   plugins: [
+    /*new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
+    new VueLoaderPlugin()*/
   ],
   resolve: {
     alias: {
-      jquery: 'jquery/dist/jquery.js' 
+      //vue: 'vue/dist/vue.js',
+      //jquery: 'jquery/dist/jquery.js' 
     }
   }
 };
