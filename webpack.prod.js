@@ -1,8 +1,10 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+//const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   mode: 'production',
@@ -68,11 +70,26 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
+      /*{
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },*/
     ],
   },
   plugins: [
+    /*new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
+    new VueLoaderPlugin(),*/
     new MiniCssExtractPlugin({
       filename: 'css/style.css'
     })
-  ]
+  ],
+  /*resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js',
+      jquery: 'jquery/dist/jquery.js'
+    }
+  }*/
 };
