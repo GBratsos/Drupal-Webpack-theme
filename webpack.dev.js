@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+//const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   mode: 'development',
@@ -45,6 +46,10 @@ module.exports = {
           }
         ]
       },
+      /*{
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },*/
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
