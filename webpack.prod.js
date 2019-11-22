@@ -86,10 +86,10 @@ module.exports = {
       filename: 'css/style.css'
     })
   ],
-  /*resolve: {
+  resolve: {
     alias: {
-      vue: 'vue/dist/vue.js',
-      jquery: 'jquery/dist/jquery.js'
+      //vue: 'vue/dist/vue.js',
+      //jquery: 'jquery/dist/jquery.js'
     }
-  }*/
+  }
 };
