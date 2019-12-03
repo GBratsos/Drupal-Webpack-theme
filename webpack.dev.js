@@ -10,7 +10,7 @@ module.exports = {
   watch: true,
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js'
+    filename: 'index.bundle.js'
   },
   module: {
     rules: [
