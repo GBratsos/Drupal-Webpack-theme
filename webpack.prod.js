@@ -55,7 +55,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf|gif|svg)$/,
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -64,26 +64,39 @@ module.exports = {
         }]
       },
       {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+              useRelativePath: true,
+            }
+          },
+        ]
+      },
+      {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader'
         }
       },
-      /*{
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },*/
+      // {
+      //   test: /\.vue$/,
+      //   loader: 'vue-loader'
+      // },
     ],
   },
   plugins: [
-    /*new webpack.ProvidePlugin({
+    new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     }),
-    new VueLoaderPlugin(),*/
+    //new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/style.css'
+      filename: 'style.css'
     })
   ],
   resolve: {
