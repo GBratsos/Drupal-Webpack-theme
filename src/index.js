@@ -1,6 +1,6 @@
 import './scss/style.scss';
 
-console.log('I am is here');
+console.log('Wedia is here');
 
 //import '../node_modules/sharer.js/sharer.min';
 
