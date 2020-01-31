@@ -46,10 +46,10 @@ module.exports = {
           }
         ]
       },
-      /*{
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },*/
+      // {
+      //   test: /\.vue$/,
+      //   loader: 'vue-loader'
+      // },
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
@@ -58,7 +58,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf|gif|svg)$/,
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -66,19 +66,32 @@ module.exports = {
           }
         }]
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+              useRelativePath: true,
+            }
+          },
+        ]
+      },
     ],
   },
   plugins: [
-    /*new webpack.ProvidePlugin({
+    new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    }),
-    new VueLoaderPlugin()*/
+    })
+    //new VueLoaderPlugin()
   ],
   resolve: {
     alias: {
       //vue: 'vue/dist/vue.js',
-      //jquery: 'jquery/dist/jquery.js' 
+      //jquery: 'jquery/dist/jquery.js'
     }
   }
 };
