@@ -1,8 +1,12 @@
 global:
   version: VERSION
+  header: true
   css:
     base:
       dist/style.css: {}
   js:
     dist/index.bundle.js: {}
-
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
